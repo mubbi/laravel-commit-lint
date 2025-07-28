@@ -4,8 +4,8 @@
 [![Build Status](https://img.shields.io/github/workflow/status/mubbi/laravel-commit-lint/CI?style=flat-square)](https://github.com/mubbi/laravel-commit-lint/actions)
 ## Requirements
 
-- Laravel >= 9.0
-- PHP >= 8.0
+- Laravel >= 12.0
+- PHP >= 8.2
 
 ## Overview
 
