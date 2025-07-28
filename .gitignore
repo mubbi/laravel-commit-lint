@@ -1,0 +1,9 @@
+# Laravel Commit Lint
+/vendor/
+/.idea/
+/.vscode/
+/.DS_Store
+composer.lock
+/coverage
+/reports
+.phpunit.result.cache
