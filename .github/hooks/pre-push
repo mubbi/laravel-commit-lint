@@ -1,0 +1,57 @@
+#!/bin/sh
+# Git pre-push hook to run PHPUnit tests and enforce minimum coverage threshold
+
+set -e
+
+COVERAGE_FILE="coverage/coverage.xml"
+MIN_COVERAGE=80
+
+# Run PHPUnit with Clover coverage
+vendor/bin/phpunit 
+
+if [ ! -f "$COVERAGE_FILE" ]; then
+  echo "[pre-push] ❌ Coverage report not found at $COVERAGE_FILE. Push aborted."
+  exit 1
+fi
+
+# Extract total statements and covered statements using POSIX-compliant sed
+STATEMENTS=$(sed -n 's/.*statements="\([0-9][0-9]*\)".*/\1/p' "$COVERAGE_FILE" | head -n 1)
+COVERED=$(sed -n 's/.*coveredstatements="\([0-9][0-9]*\)".*/\1/p' "$COVERAGE_FILE" | head -n 1)
+
+# Debug info (optional)
+echo "[pre-push] Detected Statements: ${STATEMENTS:-<missing>}, Covered: ${COVERED:-<missing>}"
+
+# Validate parsed values
+if ! echo "$STATEMENTS" | grep -Eq '^[0-9]+$'; then
+  echo "[pre-push] ❌ Invalid or missing statements count. Push aborted."
+  exit 1
+fi
+if ! echo "$COVERED" | grep -Eq '^[0-9]+$'; then
+  echo "[pre-push] ❌ Invalid or missing covered statements count. Push aborted."
+  exit 1
+fi
+
+if [ "$STATEMENTS" -eq 0 ]; then
+  echo "[pre-push] ❌ Zero statements found. Coverage meaningless. Push aborted."
+  exit 1
+fi
+
+# Calculate percentage with POSIX awk
+COVERAGE_PERCENT=$(awk "BEGIN {printf \"%.2f\", ($COVERED / $STATEMENTS) * 100}")
+
+# Validate percentage output
+if [ -z "$COVERAGE_PERCENT" ]; then
+  echo "[pre-push] ❌ Could not calculate coverage percent. Push aborted."
+  exit 1
+fi
+
+# Float comparison using awk (portable)
+IS_BELOW=$(awk "BEGIN {print ($COVERAGE_PERCENT < $MIN_COVERAGE) ? 1 : 0}")
+
+if [ "$IS_BELOW" -eq 1 ]; then
+  echo "[pre-push] ❌ Test coverage ${COVERAGE_PERCENT}% is below required ${MIN_COVERAGE}%. Push aborted."
+  exit 1
+else
+  echo "[pre-push] ✅ Test coverage ${COVERAGE_PERCENT}% meets minimum ${MIN_COVERAGE}%. Push allowed."
+  exit 0
+fi
