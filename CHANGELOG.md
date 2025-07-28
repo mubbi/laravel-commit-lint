@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1](https://github.com/mubbi/laravel-commit-lint/compare/v1.0.0...v1.0.1) (2025-07-28)
+
+
+### Bug Fixes
+
+* stub copy path ([ba912e9](https://github.com/mubbi/laravel-commit-lint/commit/ba912e90ba91585c2513f4318a81f667390b0ca3))
+* stub copy path ([#5](https://github.com/mubbi/laravel-commit-lint/issues/5)) ([9841400](https://github.com/mubbi/laravel-commit-lint/commit/9841400407dbe7ba5aee8f7868dca33910770305))
+
 ## 1.0.0 (2025-07-28)
 
 
