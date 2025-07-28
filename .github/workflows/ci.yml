@@ -209,7 +209,6 @@ jobs:
                 body: comment
               });
             }
-
   test:
     runs-on: ubuntu-latest
     steps:
@@ -217,8 +216,8 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: '8.3'
       - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress
       - name: Run tests
         run: vendor/bin/phpunit || echo "No tests found"
