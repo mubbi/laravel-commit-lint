@@ -1,7 +1,10 @@
 # Laravel Commit Lint
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/mubbi/laravel-commit-lint.svg?style=flat-square)](https://packagist.org/packages/mubbi/laravel-commit-lint)
-[![Build Status](https://img.shields.io/github/workflow/status/mubbi/laravel-commit-lint/CI?style=flat-square)](https://github.com/mubbi/laravel-commit-lint/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/mubbi/laravel-commit-lint/ci.yml?branch=main&style=flat-square)](https://github.com/mubbi/laravel-commit-lint/actions/workflows/ci.yml)
+[![Tests](https://img.shields.io/github/actions/workflow/status/mubbi/laravel-commit-lint/ci.yml?label=tests&branch=main&style=flat-square)](https://github.com/mubbi/laravel-commit-lint/actions/workflows/ci.yml)
+
+
 ## Requirements
 
 - Laravel >= 12.0
