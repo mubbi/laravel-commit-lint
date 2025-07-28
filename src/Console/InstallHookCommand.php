@@ -26,7 +26,7 @@ class InstallHookCommand extends Command
     public function handle(): int
     {
         $hookPath = $this->argument('hookPath') ?? base_path('.git/hooks/commit-msg');
-        $stubPath = $this->argument('stubPath') ?? (__DIR__ . '/../src/Hooks/commit-msg');
+        $stubPath = $this->argument('stubPath') ?? (__DIR__ . '/../Hooks/commit-msg');
 
         $hooksDir = \dirname($hookPath);
         if (!$this->files->exists($hooksDir)) {
