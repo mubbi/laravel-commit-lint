@@ -217,7 +217,13 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.3'
+          extensions: xdebug
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
-      - name: Run tests
+      - name: Run tests and generate code coverage
         run: vendor/bin/phpunit || echo "No tests found"
+      - name: Upload coverage to Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: coverage/coverage.xml
