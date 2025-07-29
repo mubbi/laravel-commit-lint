@@ -1,9 +1,10 @@
-# Laravel Commit Lint
+# Laravel Commit Lint [![Github actions Build](https://github.com/badges/poser/workflows/Build/badge.svg)](//packagist.org/packages/mubbi/laravel-commit-lint)
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/mubbi/laravel-commit-lint.svg?style=flat-square)](https://packagist.org/packages/mubbi/laravel-commit-lint)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/mubbi/laravel-commit-lint/ci.yml?branch=main&style=flat-square)](https://github.com/mubbi/laravel-commit-lint/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/github/actions/workflow/status/mubbi/laravel-commit-lint/ci.yml?label=tests&branch=main&style=flat-square)](https://github.com/mubbi/laravel-commit-lint/actions/workflows/ci.yml)
-
+[![Latest Stable Version](https://poser.pugx.org/mubbi/laravel-commit-lint/version.svg)](https://packagist.org/packages/mubbi/laravel-commit-lint)
+[![Total Downloads](https://poser.pugx.org/mubbi/laravel-commit-lint/downloads.svg)](https://packagist.org/packages/mubbi/laravel-commit-lint)
+[![PHP Version Require](http://poser.pugx.org/mubbi/laravel-commit-lint/require/php)](https://packagist.org/packages/mubbi/laravel-commit-lint)
+[![Laravel Version Require](http://poser.pugx.org/mubbi/laravel-commit-lint/require/illuminate/support)](https://packagist.org/packages/mubbi/laravel-commit-lint)
+[![Coverage Status](https://coveralls.io/repos/github/mubbi/laravel-commit-lint/badge.svg?branch=feature/coveralls-github-action)](https://coveralls.io/github/mubbi/laravel-commit-lint?branch=feature/coveralls-github-action)
 
 ## Requirements
 
