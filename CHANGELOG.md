@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0](https://github.com/mubbi/laravel-commit-lint/compare/v1.0.1...v1.1.0) (2025-07-29)
+
+
+### Features
+
+* **git:** add coveralls to track repo coverage ([d2bbde7](https://github.com/mubbi/laravel-commit-lint/commit/d2bbde7a176538e08bdf0a4cf391569a777d3f52))
+* **git:** add coveralls to track repo coverage ([#7](https://github.com/mubbi/laravel-commit-lint/issues/7)) ([4d942e2](https://github.com/mubbi/laravel-commit-lint/commit/4d942e220cadb6b69ec14a031f32ca20d2310c8f))
+
 ## [1.0.1](https://github.com/mubbi/laravel-commit-lint/compare/v1.0.0...v1.0.1) (2025-07-28)
 
 
